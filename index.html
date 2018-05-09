@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;PHP&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,10 +211,7 @@
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="PHP">PHP</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -222,87 +219,284 @@
         <ul class="search-results"></ul>
       <div id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
-          </li>
-          <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#requirements" class="toc-h2 toc-link" data-title="requirements">Requirements</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#errors" class="toc-h2 toc-link" data-title="errors">Errors</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#parameters" class="toc-h2 toc-link" data-title="parameters">Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#pagination" class="toc-h2 toc-link" data-title="pagination">Pagination</a>
+                  </li>
+                  <li>
+                    <a href="#ownership-assignment" class="toc-h2 toc-link" data-title="ownership-assignment">Ownership / Assignment</a>
+                  </li>
+                  <li>
+                    <a href="#libraries-and-tools" class="toc-h2 toc-link" data-title="libraries-and-tools">Libraries and Tools</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#official-libraries" class="toc-h1 toc-link" data-title="official-libraries">Official Libraries</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#customers" class="toc-h1 toc-link" data-title="customers">Customers</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-customer" class="toc-h2 toc-link" data-title="create-customer">Create Customer</a>
+                  </li>
+                  <li>
+                    <a href="#view-customers" class="toc-h2 toc-link" data-title="view-customers">View Customers</a>
+                  </li>
+                  <li>
+                    <a href="#get-customer" class="toc-h2 toc-link" data-title="get-customer">Get Customer</a>
+                  </li>
+                  <li>
+                    <a href="#delete-customer" class="toc-h2 toc-link" data-title="delete-customer">Delete Customer</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#quotes" class="toc-h1 toc-link" data-title="quotes">Quotes</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-quote" class="toc-h2 toc-link" data-title="create-quote">Create Quote</a>
+                  </li>
+                  <li>
+                    <a href="#view-quotes" class="toc-h2 toc-link" data-title="view-quotes">View Quotes</a>
+                  </li>
+                  <li>
+                    <a href="#get-quote" class="toc-h2 toc-link" data-title="get-quote">Get Quote</a>
+                  </li>
+                  <li>
+                    <a href="#delete-quote" class="toc-h2 toc-link" data-title="delete-quote">Delete Quote</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#invoices" class="toc-h1 toc-link" data-title="invoices">Invoices</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-invoice" class="toc-h2 toc-link" data-title="create-invoice">Create Invoice</a>
+                  </li>
+                  <li>
+                    <a href="#view-invoices" class="toc-h2 toc-link" data-title="view-invoices">View Invoices</a>
+                  </li>
+                  <li>
+                    <a href="#get-invoice" class="toc-h2 toc-link" data-title="get-invoice">Get Invoice</a>
+                  </li>
+                  <li>
+                    <a href="#delete-invoice" class="toc-h2 toc-link" data-title="delete-invoice">Delete Invoice</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#transactions" class="toc-h1 toc-link" data-title="transactions">Transactions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-transaction" class="toc-h2 toc-link" data-title="create-transaction">Create Transaction</a>
+                  </li>
+                  <li>
+                    <a href="#view-transactions" class="toc-h2 toc-link" data-title="view-transactions">View Transactions</a>
+                  </li>
+                  <li>
+                    <a href="#get-transaction" class="toc-h2 toc-link" data-title="get-transaction">Get Transaction</a>
+                  </li>
+                  <li>
+                    <a href="#delete-transaction" class="toc-h2 toc-link" data-title="delete-transaction">Delete Transaction</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#events" class="toc-h1 toc-link" data-title="events">Events</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-event" class="toc-h2 toc-link" data-title="create-event">Create Event</a>
+                  </li>
+                  <li>
+                    <a href="#view-events" class="toc-h2 toc-link" data-title="view-events">View Events</a>
+                  </li>
+                  <li>
+                    <a href="#get-event" class="toc-h2 toc-link" data-title="get-event">Get Event</a>
+                  </li>
+                  <li>
+                    <a href="#delete-event" class="toc-h2 toc-link" data-title="delete-event">Delete Event</a>
+                  </li>
+              </ul>
           </li>
       </div>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://zerobscrm.com/extension-bundles/'>Entrepreneur's Bundle</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Welcome to the Zero BS CRM API v2.0. The API is currently in Beta and we would love your feedback on it. Use the API to talk to Zero BS CRM from another application.</p>
 
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>The following table shows the API version present in each major version of Zero BS CRM</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
+<table><thead>
+<tr>
+<th>API Version</th>
+<th>ZBS Version</th>
+<th>WP Version</th>
+<th>Documentation</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>v2</td>
+<td>2.70+</td>
+<td>4.0+</td>
+<td>-</td>
+</tr>
+<tr>
+<td>v1</td>
+<td>2.00+</td>
+<td>4.0+</td>
+<td><a href="https://docs.zerobscrm.com/api/">v1 Docs</a></td>
+</tr>
+</tbody></table>
+
+<p>We are one of the only WordPress CRM&#39;s out there that offer a full API with detailed documentation. Tweet to us and say hi <a href="https://twitter.com/zerobscrm">@zerobscrm</a></p>
+<h2 id='requirements'>Requirements</h2><h2 id='errors'>Errors</h2>
+<aside class="danger">
+Zero BS CRM API has a numnber of error codes which it returns if it detects something wrong.
+</aside>
+
+<p>The Zero BS CRM API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- The resourcerequested is hidden for administrators only.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified record could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a record with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The record requested has been removed from your database</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting too many records! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- You are temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+<h2 id='parameters'>Parameters</h2><h2 id='pagination'>Pagination</h2><h2 id='ownership-assignment'>Ownership / Assignment</h2><h2 id='libraries-and-tools'>Libraries and Tools</h2><h1 id='official-libraries'>Official Libraries</h1><h1 id='authentication'>Authentication</h1>
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>The API keys are passed via GET parameters to the request URLs e.g.:</p>
 </blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<pre class="highlight php tab-php"><code>/{RESOURCE}?api_key={your_api_key}<span class="err">&amp;</span>api_secret={your_api_secret}
+</code></pre>
+<p>Zero BS CRM uses API keys to allow access to the API. You can learn how to generate your API keys by reading <a href="https://zerobscrm.com/kb/knowledge-base/zero-bs-crm-api-key-and-api-secrets/">How to Generate API Keys</a></p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>The API keys give both <em>Read</em> and <em>Write</em> access to your install of Zero BS CRM. </p>
+<h1 id='customers'>Customers</h1><h2 id='create-customer'>Create Customer</h2>
+<p>To Create a new Customer in your Zero BS CRM using the API you need to send a JSON post request to the URL. This will create or update a customer. The unique key is their email address. On Sucess the response will return the details of the new Customer added.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><br/>
+<span class='api-url'><span class='post'>POST</span> /create_customer?api_key={your_api_key}&amp;api_secret={your_api_secret}</span></p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'status'</span> <span class="o">=&gt;</span> <span class="s1">'Lead'</span><span class="p">,</span>    
+    <span class="s1">'prefix'</span> <span class="o">=&gt;</span> <span class="s1">'Mr'</span><span class="p">,</span>
+    <span class="s1">'fname'</span>  <span class="o">=&gt;</span> <span class="s1">'John'</span><span class="p">,</span>                     
+    <span class="s1">'lname'</span>  <span class="o">=&gt;</span> <span class="s1">'Doe'</span><span class="p">,</span>                  
+    <span class="s1">'suffix'</span> <span class="o">=&gt;</span> <span class="s1">'MSc'</span><span class="p">,</span>                  
+    <span class="s1">'email'</span>  <span class="o">=&gt;</span> <span class="s1">'someone@somewhere.com'</span><span class="p">,</span>        
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+    <span class="s1">'hometel'</span> <span class="o">=&gt;</span> <span class="s1">'1234 567 89'</span><span class="p">,</span>     
+    <span class="s1">'worktel'</span> <span class="o">=&gt;</span> <span class="s1">'1234 567 89'</span><span class="p">,</span>  
+    <span class="s1">'mobtel'</span>   <span class="o">=&gt;</span> <span class="s1">'1234 567 89'</span><span class="p">,</span>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
+    <span class="s1">'addr1'</span>    <span class="o">=&gt;</span> <span class="s1">'Sample House'</span><span class="p">,</span> 
+    <span class="s1">'addr2'</span>    <span class="o">=&gt;</span> <span class="s1">'Sample Road'</span><span class="p">,</span> 
+    <span class="s1">'city'</span>     <span class="o">=&gt;</span> <span class="s1">'Sample City'</span> 
+    <span class="s1">'county'</span>   <span class="o">=&gt;</span> <span class="s1">'Sample State'</span><span class="p">,</span> 
+    <span class="s1">'postcode'</span> <span class="o">=&gt;</span> <span class="s1">'P0ST C0D3'</span><span class="p">,</span> 
+    <span class="s1">'country'</span>  <span class="o">=&gt;</span> <span class="s1">'UK'</span><span class="p">,</span> 
+
+    <span class="s1">'secaddr_addr1'</span>    <span class="o">=&gt;</span> <span class="s1">'Sample House 2'</span><span class="p">,</span> 
+    <span class="s1">'secaddr_addr2'</span>    <span class="o">=&gt;</span> <span class="s1">'Sample Road 2'</span><span class="p">,</span>
+    <span class="s1">'secaddr_city'</span>     <span class="o">=&gt;</span> <span class="s1">'Sample City 2'</span><span class="p">,</span>
+    <span class="s1">'secaddr_county'</span>   <span class="o">=&gt;</span> <span class="s1">'Sample State 2'</span><span class="p">,</span> 
+    <span class="s1">'secaddr_postcode'</span> <span class="o">=&gt;</span> <span class="s1">'P1ST C1D3'</span><span class="p">,</span>
+    <span class="s1">'secaddr_country'</span>  <span class="o">=&gt;</span> <span class="s1">'USA'</span><span class="p">,</span> 
+
+    <span class="s1">'custom-field'</span> <span class="o">=&gt;</span> <span class="s1">'bacon'</span>
+    <span class="p">);</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$zerobscrm</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">'customers'</span><span class="p">,</span> <span class="nv">$data</span><span class="p">));</span>
+<span class="cp">?&gt;</span>
 </code></pre>
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>JSON response example:</p>
 </blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"fname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndoe@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lead"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"addr1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 Sample Road"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"addr2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample Town"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sampleton"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"county"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Samples"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAM PL4"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hometel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 455"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"worktel"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"mobtel"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"555 135"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"notes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Added from the API"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ID"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">135</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='view-customers'>View Customers</h2><pre class="highlight php tab-php"><code>require 'kittn'
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+api.kittens.get
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -324,9 +518,9 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
+<p>Returns a list of customers. The meta information returned is the fields for the Customer (same as in create customer). If you have custom fields these are labelled cf1 (key): (value) in the meta element of the JSON response. Visit the URL in a browser window to inspect the response..</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST /zbs_api/customers?api_key={your_api_key}&amp;api_secret={your_api_secret}</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -350,7 +544,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h2 id='get-customer'>Get Customer</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
 <span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -379,7 +573,7 @@ Remember — a happy kitten is an authenticated kitten!
 <p>This endpoint retrieves a specific kitten.</p>
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
+<h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
@@ -393,7 +587,7 @@ Remember — a happy kitten is an authenticated kitten!
 <td>The ID of the kitten to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h2 id='delete-customer'>Delete Customer</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
 <span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -418,7 +612,7 @@ Remember — a happy kitten is an authenticated kitten!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+<h3 id='http-request-4'>HTTP Request</h3>
 <p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
@@ -432,70 +626,11 @@ Remember — a happy kitten is an authenticated kitten!
 <td>The ID of the kitten to delete</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
-
-<p>The Kittn API uses the following error codes:</p>
-
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request -- Your request sucks.</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
-</tr>
-</tbody></table>
-
+<h1 id='quotes'>Quotes</h1><h2 id='create-quote'>Create Quote</h2><h2 id='view-quotes'>View Quotes</h2><h2 id='get-quote'>Get Quote</h2><h2 id='delete-quote'>Delete Quote</h2><h1 id='invoices'>Invoices</h1><h2 id='create-invoice'>Create Invoice</h2><h2 id='view-invoices'>View Invoices</h2><h2 id='get-invoice'>Get Invoice</h2><h2 id='delete-invoice'>Delete Invoice</h2><h1 id='transactions'>Transactions</h1><h2 id='create-transaction'>Create Transaction</h2><h2 id='view-transactions'>View Transactions</h2><h2 id='get-transaction'>Get Transaction</h2><h2 id='delete-transaction'>Delete Transaction</h2><h1 id='events'>Events</h1><h2 id='create-event'>Create Event</h2><h2 id='view-events'>View Events</h2><h2 id='get-event'>Get Event</h2><h2 id='delete-event'>Delete Event</h2>
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="PHP">PHP</a>
           </div>
       </div>
     </div>
