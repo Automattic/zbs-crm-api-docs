@@ -257,7 +257,7 @@
                     <a href="#view-customers" class="toc-h2 toc-link" data-title="view-customers">View Customers</a>
                   </li>
                   <li>
-                    <a href="#get-customer" class="toc-h2 toc-link" data-title="get-customer">Get Customer</a>
+                    <a href="#search-customers" class="toc-h2 toc-link" data-title="search-customers">Search Customers</a>
                   </li>
                   <li>
                     <a href="#delete-customer" class="toc-h2 toc-link" data-title="delete-customer">Delete Customer</a>
@@ -479,6 +479,7 @@ Zero BS CRM API has a numnber of error codes which it returns if it detects some
     <span class="s1">'secaddr_country'</span>  <span class="o">=&gt;</span> <span class="s1">'USA'</span><span class="p">,</span> 
 
     <span class="s1">'custom-field'</span> <span class="o">=&gt;</span> <span class="s1">'bacon'</span>
+    <span class="s1">'assign'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span>
     <span class="p">);</span>
 
 
@@ -506,7 +507,63 @@ Zero BS CRM API has a numnber of error codes which it returns if it detects some
   </span><span class="s2">"notes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Added from the API"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"ID"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">135</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='view-customers'>View Customers</h2><h2 id='get-customer'>Get Customer</h2><h2 id='delete-customer'>Delete Customer</h2><h1 id='quotes'>Quotes</h1><h2 id='create-quote'>Create Quote</h2><h2 id='view-quotes'>View Quotes</h2><h2 id='get-quote'>Get Quote</h2><h2 id='delete-quote'>Delete Quote</h2><h1 id='invoices'>Invoices</h1><h2 id='create-invoice'>Create Invoice</h2><h2 id='view-invoices'>View Invoices</h2><h2 id='get-invoice'>Get Invoice</h2><h2 id='delete-invoice'>Delete Invoice</h2><h1 id='transactions'>Transactions</h1><h2 id='create-transaction'>Create Transaction</h2><h2 id='view-transactions'>View Transactions</h2><h2 id='get-transaction'>Get Transaction</h2><h2 id='delete-transaction'>Delete Transaction</h2><h1 id='events'>Events</h1><h2 id='create-event'>Create Event</h2><h2 id='view-events'>View Events</h2><h2 id='get-event'>Get Event</h2><h2 id='delete-event'>Delete Event</h2>
+</span></code></pre><h2 id='view-customers'>View Customers</h2>
+<p>Returns a list of customers. The meta information returned is the fields for the Customer (same as in create customer). If you have custom fields these are labelled slug (key): (value) in the meta element of the JSON response. Visit the URL in a browser window to inspect the response.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><br/>
+<span class='api-url'><span class='post'>POST</span> /customers?api_key={your_api_key}&amp;api_secret={your_api_secret}</span></p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'perpage'</span> <span class="o">=&gt;</span> <span class="s1">'20'</span><span class="p">,</span>    
+    <span class="s1">'page'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
+    <span class="s1">'search'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'transactions'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">'invoices'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">'quotes'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">'owned'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span>
+    <span class="p">);</span>
+
+
+
+
+<span class="cp">?&gt;</span>
+</code></pre>
+<blockquote>
+<p>JSON response example:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+     </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">20267</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"created"</span><span class="p">:</span><span class="s2">"2017-04-25 03:33:38"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"filterTot"</span><span class="p">:</span><span class="mi">83</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"filterPages"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"meta"</span><span class="p">:{</span><span class="w">
+             </span><span class="s2">"zbsc_status"</span><span class="p">:</span><span class="s2">"Lead"</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"Customer"</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"prefix"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"fname"</span><span class="p">:</span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"lname"</span><span class="p">:</span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"cf1"</span><span class="p">:</span><span class="s2">"Custom Field 1"</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"addr1"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"addr2"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"city"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"county"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"postcode"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"country"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"secaddr_addr1"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"secaddr_addr2"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"secaddr_city"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"secaddr_county"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"secaddr_postcode"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"secaddr_country"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"hometel"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"worktel"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"mobtel"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"email"</span><span class="p">:</span><span class="s2">"email@email.com"</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"notes"</span><span class="p">:</span><span class="s2">""</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='search-customers'>Search Customers</h2><h2 id='delete-customer'>Delete Customer</h2><h1 id='quotes'>Quotes</h1><h2 id='create-quote'>Create Quote</h2><h2 id='view-quotes'>View Quotes</h2><h2 id='get-quote'>Get Quote</h2><h2 id='delete-quote'>Delete Quote</h2><h1 id='invoices'>Invoices</h1><h2 id='create-invoice'>Create Invoice</h2><h2 id='view-invoices'>View Invoices</h2><h2 id='get-invoice'>Get Invoice</h2><h2 id='delete-invoice'>Delete Invoice</h2><h1 id='transactions'>Transactions</h1><h2 id='create-transaction'>Create Transaction</h2><h2 id='view-transactions'>View Transactions</h2><h2 id='get-transaction'>Get Transaction</h2><h2 id='delete-transaction'>Delete Transaction</h2><h1 id='events'>Events</h1><h2 id='create-event'>Create Event</h2><h2 id='view-events'>View Events</h2><h2 id='get-event'>Get Event</h2><h2 id='delete-event'>Delete Event</h2>
       </div>
       <div class="dark-box">
           <div class="lang-selector">
